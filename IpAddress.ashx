@@ -13,7 +13,7 @@ public class IpAddressHandler : IHttpHandler
 {
     public bool IsReusable { get { return false; } }
     public void Write(object obj){
-        HttpContext.Current.Response.Write("<p>" + obj.ToString()+"</p>");
+        HttpContext.Current.Response.Write("<p>" + obj.ToString()+"</p>"); 
     }
     public void ProcessRequest (HttpContext context) {
         context.Response.ContentType = "text/html";
@@ -53,7 +53,7 @@ public class IpAddressHandler : IHttpHandler
         string url2 = context.Server.MapPath("~/data/IPv4.Dat");
         IP.Load(url2);
         Write(""+String.Join(", ", IP.Find("113.67.72.101")));
-        Write("" + String.Join(", ", IP.Find("192.1.1.1")));
+        Write("" + String.Join(", ", IP.Find("131.44.255.254")));
         //Write("" + String.Join(", ", IP.Find("113.0.72.3")));
         //Write("" + String.Join(", ", IP.Find("113.67.0.0")));
 
